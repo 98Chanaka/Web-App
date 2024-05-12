@@ -1,0 +1,23 @@
+{
+    "products": [
+        {
+            "name" : "Samsung Galaxy 15F",
+            "brand": "Samsung",
+            "category": "Phones",
+            "Price": "500",
+            "description ": "Smartphone",
+            "createdAt" : "2023-06-25",
+            "id": 1
+        },
+
+        {
+            "name" : "Nokia x300",
+            "brand": "Nokia",
+            "category": "Phones",
+            "Price": "350",
+            "description ": "blue colour",
+            "createdAt" : "2023-05-25",
+            "id": 2
+        }
+    ]
+}
