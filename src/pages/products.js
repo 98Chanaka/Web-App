@@ -1,4 +1,11 @@
-import React, {useEffect , useState  } from "react";
+import React, { useEffect, useState } from "react";
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ775/xC2tluFbj/sfu41p+IL40/7rwPp9OO"
+  crossorigin="anonymous"
+/>
+
 
 export function Products() {
     const [content, setContent] = useState(<ProductList showForm={showForm} />);
@@ -32,9 +39,6 @@ function ProductList(props) {
             .catch((error) => console.error("Error fetching products:", error));
     }
 
-    //fetchProducts();
-    useEffect(() => fetchProducts(),[]);
-
     return (
         <>
             <h2 className="text-center mb-3">List of Products</h2>
@@ -57,26 +61,20 @@ function ProductList(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    {
-                        products.map((product, index) => {
-                            return(
-                                <tr key={index}>
-
-                                    <td>{product.id}</td>
-                                    <td>{product.name}</td>
-                                    <td>{product.brand}</td>
-                                    <td>{product.category}</td>
-                                    <td>{product.price}</td>
-                                    <td>{product.createdAt}</td>
-                                    <td style="width: 10px, white-space: nowrap">
-                                        <button type="button" className="btn btn-primary btn-sm me-2">Edit</button>
-                                        <button type="button" className="btn btn-danger btn-sm ">Delete</button>
-                                    </td>
-                                    
-                                </tr>
-                            );
-                        }
-                    }
+                    {products.map((product, index) => (
+                        <tr key={index}>
+                            <td>{product.id}</td>
+                            <td>{product.name}</td>
+                            <td>{product.brand}</td>
+                            <td>{product.category}</td>
+                            <td>{product.price}</td>
+                            <td>{product.createdAt}</td>
+                            <td style={{ whiteSpace: "nowrap" }}>
+                                <button type="button" className="btn btn-primary btn-sm me-2">Edit</button>
+                                <button type="button" className="btn btn-danger btn-sm">Delete</button>
+                            </td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
         </>
